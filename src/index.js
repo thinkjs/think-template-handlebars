@@ -1,7 +1,7 @@
 'use strict';
 
 import handlebars from 'handlebars';
-
+import layouts from 'handlebars-layouts';
 let Base = think.adapter('template', 'base');
 
 /**
@@ -26,7 +26,7 @@ export default class extends Base {
       let data = (new Function('', `return ${content}`))();
       return handlebars.template(data)(tVar);
     }
-
+      handlebars.registerHelper(layouts(handlebars,config.root_path));
     return handlebars.compile(content, options)(tVar);
   }
 }
