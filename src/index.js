@@ -1,7 +1,7 @@
 'use strict';
 
 import handlebars from 'handlebars';
-import layouts from 'handlebars-layouts';
+import layouts from 'think-handlebars-layouts';
 let Base = think.adapter('template', 'base');
 
 /**
