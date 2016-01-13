@@ -3,7 +3,8 @@
 import handlebars from 'handlebars';
 import layouts from 'think-handlebars-layouts';
 let Base = think.adapter('template', 'base');
-
+handlebars.registerHelper(layouts(handlebars));
+var isInit=false;
 /**
  * handlebars template adapter
  */
@@ -26,7 +27,11 @@ export default class extends Base {
       let data = (new Function('', `return ${content}`))();
       return handlebars.template(data)(tVar);
     }
-      handlebars.registerHelper(layouts(handlebars,config.root_path));
+    //初始化，将thinkjs的view的根目录添加到handlebars
+    if(!isInit){
+      handlebars.rootPath=config.root_path;
+      isInit=true;
+    }
     return handlebars.compile(content, options)(tVar);
   }
 }
