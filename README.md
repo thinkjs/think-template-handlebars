@@ -34,6 +34,28 @@ export default {
 }
 ```
 
+##handlebars layouts usage
+```handlebars
+{{#extend "home/master/index.hbs"}}
+
+
+{{/extend}}
+```
+
+```handlebars
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+{{hello}}
+</body>
+</html>
+```
+more info for [handlebars layouts](https://github.com/jumplee/think-handlebars-layouts)
+
 ### precompiled
 
 you can precompile handlebars template before deployed. it will auto identified when render template.
