@@ -19,7 +19,7 @@
   "dependencies": {
     "babel-runtime": "5.8.25",
     "handlebars": "4.0.4",
-    "think-handlebars-layouts": "0.0.1"
+    "think-handlebars-layouts": ">=0.0.2"
   },
   "devDependencies": {
     "mocha": "1.20.1",
